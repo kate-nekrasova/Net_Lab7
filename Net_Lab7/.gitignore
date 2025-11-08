@@ -1,0 +1,17 @@
+# Visual Studio files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.vscode/
+
+# Build output
+*.dll
+*.exe
+*.pdb
+
+# Temporary files
+*.tmp
+*.log
+
