@@ -74,5 +74,54 @@ namespace WpfApp1
             await _studentsList.LoadAsync();
             MessageBox.Show("Дані успішно завантажено.", "Завантаження", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        private void SearchTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
+            {
+                _studentsList.ResetFilter();
+            }
+            else
+            {
+                _studentsList.SearchStudent(SearchTextBox.Text);
+            }
+        }
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            _studentsList.SearchStudent(SearchTextBox.Text);
+        }
+
+        private void UniqueYearButton_Click(object sender, RoutedEventArgs e)
+        {
+            var uniqueYears = _studentsList.Students.Select(s => s.Year).Distinct().OrderBy(y => y).ToList();
+            MessageBox.Show("Унікальні роки: " + string.Join(", ", uniqueYears), "Унікальні роки", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void OldestStudentButton_Click(object sender, RoutedEventArgs e)
+        {
+            var oldest = _studentsList.Students.OrderBy(s => s.Year).FirstOrDefault();
+            if (oldest != null)
+                MessageBox.Show($"Найстарший студент: {oldest.Name}, рік народження: {oldest.Year}", "Найстарший студент", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void AverageYearButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_studentsList.Students.Count > 0)
+            {
+                double average = _studentsList.Students.Average(s => s.Year);
+                MessageBox.Show($"Середній рік народження: {average:F2}", "Середній рік", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Список студентів порожній.", "Помилка", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void GroupBySchoolButton_Click(object sender, RoutedEventArgs e)
+        {
+            var groups = _studentsList.Students.GroupBy(s => s.School)
+                                               .Select(g => $"{g.Key}: {g.Count()} студентів");
+            MessageBox.Show(string.Join(Environment.NewLine, groups), "Групування за школою", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

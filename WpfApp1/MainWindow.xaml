@@ -57,5 +57,14 @@
             <Button x:Name="LoadButton" Content="Завантажити" Margin="5" Click="LoadButton_Click"/>
             <Button x:Name="SaveButton" Content="Зберегти" Margin="5" Click="SaveButton_Click"/>
         </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,5" Width="786" Background="#2E3348">
+            <TextBlock Text="Пошук" VerticalAlignment="Center" Margin="5" Foreground="White" />
+            <TextBox x:Name="SearchTextBox" Width="115" Margin="5" Padding="2"/>
+            <Button x:Name="SearchButton" Content="Пошук" Margin="5" Click="SearchButton_Click" Background="WhiteSmoke" Width="46"/>
+            <Button x:Name="UniqueYearButton" Content="Унікальні роки" Margin="5" Click="UniqueYearButton_Click" Background="WhiteSmoke" Width="104"/>
+            <Button x:Name="OldestStudentButton" Content="Найстарший студент" Margin="5" Click="OldestStudentButton_Click" Background="WhiteSmoke" Width="122"/>
+            <Button x:Name="AverageYearButton" Content="Середній рік народження" Margin="5" Click="AverageYearButton_Click" Background="WhiteSmoke" Width="154"/>
+            <Button x:Name="GroupBySchoolButton" Content="Групування за школою" Margin="5" Click="GroupBySchoolButton_Click" Background="WhiteSmoke" Width="138"/>
+        </StackPanel>
     </Grid>
 </Window>

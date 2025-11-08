@@ -21,3 +21,4 @@ D:\Новая папка\Net Lab\Net_Lab7\WpfApp1\obj\Debug\net8.0-windows\refin
 D:\Новая папка\Net Lab\Net_Lab7\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
 D:\Новая папка\Net Lab\Net_Lab7\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
 D:\Новая папка\Net Lab\Net_Lab7\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
+D:\Новая папка\Net Lab\Net_Lab7\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json

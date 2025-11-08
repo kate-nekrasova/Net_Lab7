@@ -39,7 +39,7 @@ namespace Net_Lab7
             get { return year; }
             set
             {
-                if (value < 1900 || value > DateTime.Now.Year)
+                if (value < 1900 || value > DateTime.Now.Year - 5)
                     throw new ArgumentException("Некоректний рік народження");
                 year = value;
             }
